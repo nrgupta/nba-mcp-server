@@ -7,7 +7,7 @@ A Model Context Protocol (MCP) server that fetches today's NBA games, player sta
 ## Architecture
 
 ### `nba_mcp_server.py`
-The MCP server. Contains the `NBADataFetcher` class and exposes 5 tools to Claude Desktop:
+The MCP server. Contains the `NBADataFetcher` class and exposes 5 tools
 
 | Tool | Description |
 |---|---|
