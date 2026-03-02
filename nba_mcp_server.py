@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
 import asyncio
 import json
+import os
 from datetime import datetime
 from itertools import combinations
 from typing import Any
 import httpx
+from dotenv import load_dotenv
 from mcp.server import Server
 from mcp.types import Tool, TextContent
 import mcp.server.stdio
+
+load_dotenv()
 
 # Initialize MCP server
 server = Server("nba-betting-analyzer")
 
 # Configuration - Only need Odds API key
-ODDS_API_KEY = "ccf001701a33d32f2b568be171ad09ed"
+ODDS_API_KEY = os.getenv("ODDS_API_KEY")
 
 class NBADataFetcher:
     """Fetches NBA data without any AI processing"""
