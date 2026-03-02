@@ -1,2 +1,55 @@
 [2026-02-24 20:59:18.734468] Fetching NBA betting analysis...
 [2026-02-24 20:59:21.328393] Email sent to neilg2001@gmail.com
+[2026-02-25 21:30:04.830617] Fetching NBA betting analysis...
+[2026-02-25 21:30:07.397023] Email sent to neilg2001@gmail.com
+[2026-02-26 21:34:16.381620] Fetching NBA betting analysis...
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/smtplib.py", line 405, in getreply
+    line = self.file.readline(_MAXLINE + 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/neilgupta/Desktop/NBA-MCP/daily_report.py", line 245, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/neilgupta/Desktop/NBA-MCP/daily_report.py", line 241, in main
+    send_email(html, date)
+    ~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/neilgupta/Desktop/NBA-MCP/daily_report.py", line 229, in send_email
+    server.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/smtplib.py", line 724, in login
+    self.ehlo_or_helo_if_needed()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/smtplib.py", line 618, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+                   ~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/smtplib.py", line 459, in ehlo
+    (code, msg) = self.getreply()
+                  ~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/smtplib.py", line 408, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed: "
+                                 + str(e))
+smtplib.SMTPServerDisconnected: Connection unexpectedly closed: [Errno 60] Operation timed out
+[2026-02-27 21:38:32.373899] Fetching NBA betting analysis...
+[2026-02-27 21:38:36.283486] Email sent to neilg2001@gmail.com
