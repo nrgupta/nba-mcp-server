@@ -18,7 +18,7 @@ The MCP server. Contains the `NBADataFetcher` class and exposes 5 tools
 | `analyze_bets` | Full report: game breakdowns, value edges, both parlays, and top players in form |
 
 ### `daily_report.py`
-Calls `analyze_bets` and sends a formatted HTML email to Gmail. Scheduled via launchd to run daily at 12pm.
+Calls `analyze_bets` and sends a formatted HTML email to Gmail. Scheduled via launchd to run daily at 3:30 PM.
 
 ---
 
@@ -119,7 +119,7 @@ Generate an App Password at: Google Account → Security → 2-Step Verification
 
 ### Schedule (launchd)
 
-The report is scheduled via launchd (not cron) so it runs even if the Mac was asleep at 12pm — it fires as soon as the Mac wakes up.
+The report is scheduled via launchd (not cron) so it runs even if the Mac was asleep at 3:30 PM — it fires as soon as the Mac wakes up.
 
 Plist location: `~/Library/LaunchAgents/com.neilgupta.nba-report.plist`
 

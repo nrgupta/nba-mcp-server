@@ -139,7 +139,7 @@ class NBADataFetcher:
             "Period": "0",
             "PlusMinus": "N",
             "Rank": "N",
-            "Season": "2024-25",
+            "Season": "2025-26",
             "SeasonType": "Regular Season"
         }
 

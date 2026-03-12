@@ -8,13 +8,18 @@ import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file in the script's directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(script_dir, '.env'))
 
 # Allow importing NBADataFetcher from the same directory
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from nba_mcp_server import NBADataFetcher
 
-GMAIL_ADDRESS = "neilg2001@gmail.com"
-GMAIL_APP_PASSWORD = "dtqc caiq iddq igml"
+GMAIL_ADDRESS = os.getenv("GMAIL_ADDRESS")
+GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
 
 
 def fmt_odds(price) -> str:
