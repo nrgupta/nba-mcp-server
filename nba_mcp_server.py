@@ -40,7 +40,7 @@ class NBADataFetcher:
             "DayOffset": "0"
         }
 
-        async with httpx.AsyncClient(timeout=30.0) as client:
+        async with httpx.AsyncClient(timeout=30.0, verify=False) as client:
             try:
                 response = await client.get(url, headers=headers, params=params)
                 data = response.json()
@@ -143,7 +143,7 @@ class NBADataFetcher:
             "SeasonType": "Regular Season"
         }
 
-        async with httpx.AsyncClient(timeout=30.0) as client:
+        async with httpx.AsyncClient(timeout=30.0, verify=False) as client:
             try:
                 response = await client.get(url, headers=headers, params=params)
                 data = response.json()
@@ -216,7 +216,7 @@ class NBADataFetcher:
             "oddsFormat": "american"
         }
 
-        async with httpx.AsyncClient(timeout=30.0) as client:
+        async with httpx.AsyncClient(timeout=30.0, verify=False) as client:
             try:
                 response = await client.get(url, params=params)
                 data = response.json()
